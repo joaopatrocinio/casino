@@ -1,0 +1,54 @@
+label {
+    font-weight: bold;
+}
+
+#bet-amount-input {
+    font-size: 1em;
+    height:30px;
+    width: 70px;
+    text-align: right;
+}
+
+#bet-amount {
+    display: flex;
+    align-items: center;
+}
+
+#bet-amount > * {
+    margin-right: 10px;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+#game td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #62b0ff;
+    color: #62b0ff;
+}
+
+#game td:first-child {
+    border: 0px;
+    font-size: 0.8em;
+    background-color: white;
+    color: black !important;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.current-level > td {
+    cursor: pointer;
+    color: black !important;
+}
+
+.previous-level > td {
+    color: black !important;
+}

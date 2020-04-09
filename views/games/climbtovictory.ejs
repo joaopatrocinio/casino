@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <title>99bet - ClimbToVictory</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="/styles/climbtovictory.css">
+    </head>
+    <body>
+        <%- include('../header'); %>
+        
+        <div id="wrapper">
+            <h1>ClimbToVictory</h1>
+            <h4>Instructions:</h4>
+            <p>
+                Choose the amount of money to bet (the money will be automatically removed 
+                from your balance), play the game, 
+                end the game whenever you want and get your money back.
+            </p>
+            <div id="bet-amount">
+                <div><label for="bet-amount-input">Bet amount:</label></div><div><input type="number" value="0.20" step="0.01" min="0.20" id="bet-amount-input"> €</div>
+                <% if (!inGame) { %>
+                    <div id="bet-button" class="button">Play</div>
+                <% } else { %>
+                    <div id="bet-button" class="button disabled">Play</div>
+                <% } %>
+            </div>
+
+            <% if (inGame) { %>
+
+            
+            <table id="game">
+                <% if (level == 10) { %>
+                    <tr class="current-level">
+                <% } else if (level > 10) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">9.31x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 9) { %>
+                    <tr class="current-level">
+                <% } else if (level > 9) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">7.45x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 8) { %>
+                    <tr class="current-level">
+                <% } else if (level > 8) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">5.96x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 7) { %>
+                    <tr class="current-level">
+                <% } else if (level > 7) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">4.77x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 6) { %>
+                    <tr class="current-level">
+                <% } else if (level > 6) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">3.81x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 5) { %>
+                    <tr class="current-level">
+                <% } else if (level > 5) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">3.05x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 4) { %>
+                    <tr class="current-level">
+                <% } else if (level > 4) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">2.44x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 3) { %>
+                    <tr class="current-level">
+                <% } else if (level > 3) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">1.95x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 2) { %>
+                    <tr class="current-level">
+                <% } else if (level > 2) { %>
+                    <tr class="previous-level">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                    <td class="game-odd">1.56x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                <% if (level == 1) { %>
+                    <tr class="current-level">
+                <% } else if (level > 1) { %>
+                    <tr class="previous-level">
+                <% } %>
+                    <td class="game-odd">1.25x</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+            </table>
+            <% } %>
+        </div>
+    </body>
+
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/Casino.js"></script>
+    <script src="/scripts/ClimbToVictory.js"></script>
+</html>
