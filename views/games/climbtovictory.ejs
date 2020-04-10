@@ -23,11 +23,14 @@
                 <% } else { %>
                     <div id="bet-button" class="button disabled">Play</div>
                 <% } %>
+
+                <% if(level > 1) { %>
+                    <div class="button" id="winnings" onclick="javascript: ClimbToVictory.end()">Take winnings (<%= winnings %>)</div>
+                <% } %>
             </div>
 
             <% if (inGame) { %>
-
-            
+                
             <table id="game">
                 <% if (level == 10) { %>
                     <tr class="current-level">
@@ -168,6 +171,7 @@
                     <td>?</td>
                 </tr>
             </table>
+                
             <% } %>
         </div>
     </body>

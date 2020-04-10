@@ -1,7 +1,7 @@
 class User {
 
     constructor() {
-        this.balance = 10;
+        this.balance = 2;
     }
 
     static login(user, username, password) {

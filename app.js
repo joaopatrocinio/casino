@@ -55,7 +55,10 @@ app.get("/games/climbtovictory", (req, res) => {
     res.render("games/climbtovictory", {
         balance: (Math.round(req.session.user.balance * 100) / 100).toFixed(2) + "€",
         inGame: !req.session.user.currentGame ? false : true,
-        level: !req.session.user.currentGame ? false : req.session.user.currentGame.level
+        level: !req.session.user.currentGame ? false : req.session.user.currentGame.level,
+        winnings: !req.session.user.currentGame ? false : 
+            (Math.round((req.session.user.currentGame.bet * Math.pow(1.25, req.session.user.currentGame.level - 1)) * 100) / 100).toFixed(2)    
+        
     });
 })
 

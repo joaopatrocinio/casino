@@ -6,7 +6,7 @@ class ClimbToVictory {
     }
 
     startGame() {
-        fetch('http://localhost:4422/games/climbtovictory', {
+        fetch('/games/climbtovictory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ class ClimbToVictory {
     }
 
     static climb(choice) {
-        fetch('http://localhost:4422/games/climbtovictory/climb', {method: 'POST'})
+        fetch('/games/climbtovictory/climb', {method: 'POST'})
         .then(res => res.json())
         .then(response => {
             if (response == true) {
@@ -42,6 +42,20 @@ class ClimbToVictory {
             alert("Sorry, there are no results for your search")
         });
     }
+
+    static end() {
+        fetch('/games/climbtovictory/end', {method: 'POST'})
+        .then(res => res.json())
+        .then(response => {
+            if (response) {
+                window.location.reload();
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            alert("Sorry, there are no results for your search")
+        });
+    }
 }
 
 window.addEventListener('load', function () {
@@ -51,6 +65,7 @@ window.addEventListener('load', function () {
     }
 
     if (this.localStorage.getItem("currentGame")) {
+
         this.window.currentGame = JSON.parse(this.localStorage.getItem("currentGame"))
         let previous = document.querySelectorAll(".previous-level > td:not(.game-odd)");
         for (i = 0; i < previous.length; i++) {
@@ -60,11 +75,11 @@ window.addEventListener('load', function () {
         this.console.log(previous)
         this.console.log(window.currentGame.choices)
 
-        var array = Array.prototype.slice.call(previous);
+        /*var array = Array.prototype.slice.call(previous);
         for (i = 0; i < this.window.currentGame.choices.length; i++) {
             this.console.log(i)
             array[this.window.currentGame.choices[i] - 1 + (5 * i)].innerText = "O";
-        }
+        }*/
     }
 
     // Bet
@@ -73,6 +88,8 @@ window.addEventListener('load', function () {
         localStorage.setItem("currentGame", JSON.stringify(new ClimbToVictory(bet)));
         window.location.reload();
     });
+
+    
 
     // Choice
     let choices = document.querySelectorAll(".current-level > td");

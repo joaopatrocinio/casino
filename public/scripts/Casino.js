@@ -10,7 +10,7 @@ class Casino {
 
     // Will replace all info from data on the server
     static getInfo() {
-        fetch("http://localhost:4422/user")
+        fetch("/user")
             .then(res => res.json())
             .then(response => {
                 Casino.updateInfo(response);
@@ -27,7 +27,7 @@ class Casino {
     }
 
     login(username, password) {
-        fetch("http://localhost:4422/user/login", {
+        fetch("/user/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
