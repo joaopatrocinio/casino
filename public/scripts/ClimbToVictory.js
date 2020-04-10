@@ -19,7 +19,6 @@ class ClimbToVictory {
         })
         .catch(err => {
             console.log(err)
-            alert("Sorry, there are no results for your search")
         });
     }
 
@@ -39,7 +38,6 @@ class ClimbToVictory {
         })
         .catch(err => {
             console.log(err)
-            alert("Sorry, there are no results for your search")
         });
     }
 
@@ -53,7 +51,6 @@ class ClimbToVictory {
         })
         .catch(err => {
             console.log(err)
-            alert("Sorry, there are no results for your search")
         });
     }
 }

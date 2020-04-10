@@ -17,7 +17,6 @@ class Casino {
             })
             .catch(err => {
                 console.log(err)
-                alert("Sorry, there are no results for your search")
             });
     }
 
@@ -43,7 +42,6 @@ class Casino {
         })
         .catch(err => {
             console.log(err)
-            alert("Sorry, there are no results for your search")
         });
     }
 }
