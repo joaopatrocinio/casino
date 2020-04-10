@@ -13,8 +13,6 @@ class ClimbToVictory extends Game {
         let game = user.currentGame;
         let num = Math.random();
         let probability = (game.level % 2 != 0) ? (1 - 0.2 * game.level) : (1 - 0.2 * (game.level - 1));
-        console.log(probability);
-        console.log(num);
         if (num < probability) {
             game.level += 1;
             return true;

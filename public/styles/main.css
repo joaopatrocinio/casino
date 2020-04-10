@@ -20,6 +20,7 @@ header {
     text-align: center;
     max-width: 900px;
     margin: 10px auto;
+    box-sizing: border-box;
 }
 
 header > h4 {
@@ -78,10 +79,11 @@ a {
     background-color: white;
     margin: 0px auto;
     border: 2px solid black;
-    border-radius: 25px 25px 5px 5px;
+    border-radius: 25px;
     max-width: 900px;
     min-height: 457px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .button {
@@ -92,4 +94,16 @@ a {
     cursor: pointer;
     width: fit-content;
     color: white;
+}
+
+footer {
+    background-color: #62b0ff;
+    max-width: 900px;
+    margin: 10px auto;
+    border: 2px solid #4b5e80;
+    border-radius: 25px 25px 5px 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    box-sizing: border-box;
 }
