@@ -77,10 +77,12 @@ app.post("/games/climbtovictory/climb", (req, res) => {
         throw Error("Join a game first.");
 })
 
-app.post("/games/climbtovictory/end", (req, res) => {
+app.get("/games/climbtovictory/end", (req, res) => {
     if (req.session.user.currentGame)
-        if (req.session.user.currentGame.level > 1)
-            return res.json(User.endGame(req.session.user));
+        if (req.session.user.currentGame.level > 1) {
+            User.endGame(req.session.user);
+            return res.redirect("/games/climbtovictory");
+        }
         else
             throw Error("Cannot end on first level.");
     else

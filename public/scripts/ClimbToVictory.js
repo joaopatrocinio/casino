@@ -44,21 +44,6 @@ class ClimbToVictory {
             console.log(err)
         });
     }
-
-    static end() {
-        fetch('/games/climbtovictory/end', {method: 'POST'})
-        .then(res =>  {
-            return res.json()
-        })
-        .then(response => {
-            if (response) {
-                window.location.reload();
-            }
-        })
-        .catch(err => {
-            console.log(err)
-        });
-    }
 }
 
 window.addEventListener('load', function () {

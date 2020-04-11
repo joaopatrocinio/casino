@@ -26,153 +26,27 @@
                 <% } %>
 
                 <% if(level > 1) { %>
-                    <div class="button" id="winnings" onclick="javascript: ClimbToVictory.end()">Take winnings (<%= winnings %>)</div>
+                    <div class="button" id="winnings"><a href="/games/climbtovictory/end">Take winnings (<%= winnings %>)</a></div>
                 <% } %>
             </div>
 
             <% if (inGame) { %>
-                
-            <table id="game">
-                <% if (level == 10) { %>
-                    <tr class="current-level">
-                <% } else if (level > 10) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">9.31x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 9) { %>
-                    <tr class="current-level">
-                <% } else if (level > 9) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">7.45x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 8) { %>
-                    <tr class="current-level">
-                <% } else if (level > 8) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">5.96x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 7) { %>
-                    <tr class="current-level">
-                <% } else if (level > 7) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">4.77x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 6) { %>
-                    <tr class="current-level">
-                <% } else if (level > 6) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">3.81x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 5) { %>
-                    <tr class="current-level">
-                <% } else if (level > 5) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">3.05x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 4) { %>
-                    <tr class="current-level">
-                <% } else if (level > 4) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">2.44x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 3) { %>
-                    <tr class="current-level">
-                <% } else if (level > 3) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">1.95x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 2) { %>
-                    <tr class="current-level">
-                <% } else if (level > 2) { %>
-                    <tr class="previous-level">
-                <% } else { %>
-                    <tr>
-                <% } %>
-                    <td class="game-odd">1.56x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-                <% if (level == 1) { %>
-                    <tr class="current-level">
-                <% } else if (level > 1) { %>
-                    <tr class="previous-level">
-                <% } %>
-                    <td class="game-odd">1.25x</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-            </table>
-                
+                <table id="game">
+                    <% for (i = 10; i >= 1; i--) { %>
+                        <% if (level == i) { %>
+                            <tr class="current-level">
+                        <% } else if (level > i) { %>
+                            <tr class="previous-level">
+                        <% } else { %>
+                            <tr>
+                        <% } %>
+                            <td class="game-odd"><%- Math.pow(1.25, i).toFixed(2) %></td>
+                            <% for (j = 0; j < 5; j++) { %>
+                                <td><%- (level > i) ? "X" : "?" %></td>
+                            <% } %>
+                        </tr>
+                    <% } %>
+                </table>
             <% } else { %>
                 <p>The game has not yet been started.</p>
             <% } %>
