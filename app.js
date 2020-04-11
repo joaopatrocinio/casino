@@ -1,9 +1,12 @@
 const express = require('express');
 const session = require('express-session');
+const cors = require('cors');
 const ejs = require('ejs');
 const app = express();
 const path = require('path');
 const port = 4422;
+
+app.use(cors())
 
 const User = require('./User.js');
 const ClimbToVictory = require('./ClimbToVictory.js')
