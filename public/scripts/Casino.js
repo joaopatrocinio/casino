@@ -24,7 +24,7 @@ class Casino {
 
     setBalance(newBalance) {
         this.balance = newBalance;
-        document.getElementById("balance-field").innerHTML = (Math.round(newBalance * 100) / 100).toFixed(2) + "€";
+        document.getElementById("balance-field").innerHTML = newBalance.toFixed(2) + "€";
     }
 
     login(username, password) {

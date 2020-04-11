@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0px;
     padding: 0px;
     /*background-color: #5d5755;*/
@@ -62,6 +62,8 @@ header > h4 {
     margin: 0px auto;
     padding: 5px 15px;
     cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 #nav-items > a:hover {
@@ -94,6 +96,8 @@ a {
     cursor: pointer;
     width: fit-content;
     color: white;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 footer {

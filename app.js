@@ -34,7 +34,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get("/home", (req, res) => {
-    res.render("index", { balance: (Math.round(req.session.user.balance * 100) / 100).toFixed(2) + "€" });
+    res.render("index", { balance: req.session.user.balance.toFixed(2) + "€" });
 })
 
 app.get("/", (req, res) => {
@@ -51,12 +51,12 @@ app.post("/user/login", (req, res) => {
 })
 
 app.get("/games", (req, res) => {
-    res.render("games", { balance: (Math.round(req.session.user.balance * 100) / 100).toFixed(2) + "€" });
+    res.render("games", { balance: req.session.user.balance.toFixed(2) + "€" });
 })
 
 app.get("/games/climbtovictory", (req, res) => {
     res.render("games/climbtovictory", {
-        balance: (Math.round(req.session.user.balance * 100) / 100).toFixed(2) + "€",
+        balance: req.session.user.balance.toFixed(2) + "€",
         inGame: !req.session.user.currentGame ? false : true,
         level: !req.session.user.currentGame ? false : req.session.user.currentGame.level,
         winnings: !req.session.user.currentGame ? false : 

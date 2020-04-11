@@ -69,6 +69,9 @@ window.addEventListener('load', function () {
 
     if (this.localStorage.getItem("currentGame")) {
 
+        if (!this.document.getElementById("game"))
+            this.window.location.reload();
+
         this.window.currentGame = JSON.parse(this.localStorage.getItem("currentGame"))
         let previous = document.querySelectorAll(".previous-level > td:not(.game-odd)");
         for (i = 0; i < previous.length; i++) {
