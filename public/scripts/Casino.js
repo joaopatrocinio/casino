@@ -11,7 +11,9 @@ class Casino {
     // Will replace all info from data on the server
     static getInfo() {
         fetch("/user")
-            .then(res => res.json())
+            .then(res =>  {
+                return res.json()
+            })
             .then(response => {
                 Casino.updateInfo(response);
             })
@@ -36,7 +38,9 @@ class Casino {
                 password: password
             })
         })
-        .then(res => res.json())
+        .then(res =>  {
+            return res.json()
+        })
         .then(response => {
             window.casino = new Casino(response);
         })

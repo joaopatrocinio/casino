@@ -13,7 +13,9 @@ class ClimbToVictory {
             },
             body: JSON.stringify(this)
         })
-        .then(res => res.json())
+        .then(res =>  {
+            return res.json()
+        })
         .then(response => {
             Casino.updateInfo(response);
         })
@@ -24,7 +26,9 @@ class ClimbToVictory {
 
     static climb(choice) {
         fetch('/games/climbtovictory/climb', {method: 'POST'})
-        .then(res => res.json())
+        .then(res =>  {
+            return res.json()
+        })
         .then(response => {
             if (response == true) {
                 window.currentGame.choices.push(choice);
@@ -43,7 +47,9 @@ class ClimbToVictory {
 
     static end() {
         fetch('/games/climbtovictory/end', {method: 'POST'})
-        .then(res => res.json())
+        .then(res =>  {
+            return res.json()
+        })
         .then(response => {
             if (response) {
                 window.location.reload();
